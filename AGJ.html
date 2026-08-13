@@ -162,16 +162,16 @@
         <div id="mainMenuPage" class="page active">
             <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">TYPE OF CRITICAL SYSTEM:</h1>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <button class="asset-card" onclick="showForm('GENERATOR SET')">GENERATOR SET</button>
-                <button class="asset-card" onclick="showForm('AIR HANDLING UNIT')">AIR HANDLING UNIT</button>
-                <button class="asset-card" onclick="showForm('WATER SUPPLY SYSTEM')">WATER SUPPLY SYSTEM</button>
-                <button class="asset-card" onclick="showForm('ELECTRICAL SUPPLY')">ELECTRICAL SUPPLY</button>
-                <button class="asset-card" onclick="showForm('BAS SYSTEM')">BAS SYSTEM</button>
-                <button class="asset-card" onclick="showForm('LIFT')">LIFT</button>
-                <button class="asset-card" onclick="showForm('CHILLER AND COOLING TOWER')">CHILLER AND COOLING TOWER</button>
-                <button class="asset-card" onclick="showForm('FIRE PROTECTION SYSTEM')">FIRE PROTECTION SYSTEM</button>
-                <button class="asset-card" onclick="showForm('AUTOCLAVE')">AUTOCLAVE</button>
-                <button class="asset-card" onclick="showForm('MEDICAL GAS PIPELINE SYSTEM')">MEDICAL GAS PIPELINE SYSTEM</button>
+                <!-- <button class="asset-card" onclick="showForm('CT SCANNER')">Scanning Systems, Computed Tomography (CT Scanner)</button>
+                <button class="asset-card" onclick="showForm('MRI SCANNER')">Scanning Systems, Magnetic Resonance Imaging, Full-Body (MRI Scanner)</button>
+                <button class="asset-card" onclick="showForm('PET SCANNER')">PET Scanner</button>
+                <button class="asset-card" onclick="showForm('MAMMO UNIT')">Radiographic Units, Mammographic</button>
+                <button class="asset-card" onclick="showForm('ANGIO SYSTEM')">Radiographic/Fluoroscopic Systems, Angiographic/Interventional</button>
+                <button class="asset-card" onclick="showForm('X-RAY SYSTEM')">Radiographic/Fluoroscopic Systems, General-Purpose</button> -->
+                <button class="asset-card" onclick="showForm('WATER PURIFIER')">Water Purification System</button>
+                <!-- <button class="asset-card" onclick="showForm('RADIOTHERAPY')">Radiotherapy</button>
+                <button class="asset-card" onclick="showForm('BRACHYTHERAPY')">Brachytherapy</button>
+                <button class="asset-card" onclick="showForm('OTHERS')">OTHERS</button> -->
             </div>
         </div>
 
@@ -214,226 +214,70 @@
             document.body.scrollTop = 0; // For Safari
             document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
             }
-        const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw2qjTumpYARgSe0E0IrRZq7g5RrISPBedT96ItkAySjiy-ARH_nSpQwS_5LE8JOHTn/exec';//Write the API here
+        const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwisD8IL7Zeaq2Gb4012hELmJyhpOytQIsKGg9U9vJEzOibkzAsRLFbe1b1HkKtJ1t5/exec';//Write the API here
 
         const assetLists = {
-            'GENERATOR SET': [
-                {name: 'Genset-1 (400kVa)', location: 'Bilik Genset'}, 
-                {name: 'Genset-2 (400kVa)', location: 'Bilik Genset'}
-            ],
+            // 'CT SCANNER': [
+            //     {name: 'Genset-1 (400kVa)', location: 'Bilik Genset'}, 
+            //     {name: 'Genset-2 (400kVa)', location: 'Bilik Genset'}
+            // ],
 
-            'AIR HANDLING UNIT': [
-                {name: 'AHU-IMR1', location: 'Level 1'},
-                {name: 'AHU-IMR2', location: 'Level 1'},
-                {name: 'AHU-AE', location: 'Level 1'},
-                {name: 'AHU-ADM', location: 'Level 1'},
-                {name: 'AHU-PH1', location: 'Level 1'},
-                {name: 'AHU-PH2', location: 'Level 1'},
-                {name: 'AHU-SC', location: 'Level 1'},
-                {name: 'AHU-HD', location: 'Level 1'},
-                {name: 'AHU-RH', location: 'Level 1'},
-                {name: 'AHU-PA1', location: 'Level 1'}, 
-                {name: 'AHU-PA2', location: 'Level 1'},
-                {name: 'AHU-MS1', location: 'level 2'},
-                {name: 'AHU-MS2', location: 'level 2'},
-                {name: 'AHU-MT1', location: 'level 2'},
-                {name: 'AHU-CSSD1', location: 'level 2'},
-                {name: 'AHU-CSSD3', location: 'level 2'},
-                {name: 'AHU-LD', location: 'level 2'},
-                {name: 'AHU-MTY', location: 'level 2'},
-                {name: 'AHU-WF', location: 'level 2'},
-                {name: 'AHU-WM', location: 'level 2'}
-            ],
+            // 'MRI SCANNER': [
+            //     {name: 'VCB 1(Incomer 1)', location: 'Bilik HT'},
+            //     {name: 'VCB 2(Incomer 2)', location: 'Bilik HT'},
+            //     {name: 'VCB 3(TX Feeder 1)', location: 'Bilik HT'},
+            //     {name: 'TBD 2', location: 'AMF Board'}
+            // ],
 
-            'LIFT': [
-                {name: 'Lift-Toshiba-1', location: 'Block Patient & Staff'},
-                {name: 'Lift-Toshiba-2', location: 'Block Patient & Staff'},
-                {name: 'Lift-Toshiba', location: 'Lobby'}
-            ],
+            // 'PET SCANNER': [
+            //     {name: 'Suction Tank', location: 'Hospital Suction Tank'},
+            //     {name: 'Hospital-Vertical multistage pump-1', location: 'House Pump near Hospital Suction Tank'},
+            //     {name: 'Hospital-Vertical multistage pump-2', location: 'House Pump near Hospital Suction Tank'},
+            //     {name: 'Hospital-Vertical multistage pump-3', location: 'House Pump near Hospital Suction Tank'},
+            //     {name: 'Kuarters-Vertical multistage pump-1', location: 'House Pump near Hospital Suction Tank'},
+            //     {name: 'Kuarters-Vertical multistage pump-2', location: 'House Pump near Hospital Suction Tank'}
+            // ],
 
-
-            'WATER SUPPLY SYSTEM': [
-                {name: 'Suction Tank', location: 'Hospital Suction Tank'},
-                {name: 'Hospital-Vertical multistage pump-1', location: 'House Pump near Hospital Suction Tank'},
-                {name: 'Hospital-Vertical multistage pump-2', location: 'House Pump near Hospital Suction Tank'},
-                {name: 'Hospital-Vertical multistage pump-3', location: 'House Pump near Hospital Suction Tank'},
-                {name: 'Kuarters-Vertical multistage pump-1', location: 'House Pump near Hospital Suction Tank'},
-                {name: 'Kuarters-Vertical multistage pump-2', location: 'House Pump near Hospital Suction Tank'},
-                {name: 'Kuarters-Vertical multistage pump-3', location: 'House Pump near Hospital Suction Tank'},
-
-                {name: 'Distribution Tank', location: 'Hospital Distribution Tank'},
-                {name: 'Hospital-Vertical multistage pump-1', location: 'House Pump near Hospital Distribution Tank'},
-                {name: 'Hospital-Vertical multistage pump-2', location: 'House Pump near Hospital Distribution Tank'},
-                {name: 'Hospital-Vertical multistage pump-3', location: 'House Pump near Hospital Distribution Tank'},
-                {name: 'Kuarters-Vertical multistage pump-1', location: 'House Pump near Hospital Distribution Tank'},
-                {name: 'Kuarters-Vertical multistage pump-2', location: 'House Pump near Hospital Distribution Tank'},
-                {name: 'Kuarters-Vertical multistage pump-3', location: 'House Pump near Hospital Distribution Tank'},
-
-                {name: 'Suction Tank', location: 'Kuarters Suction Tank'},
-                {name: 'Kuarters-Vertical multistage pump-1', location: 'House Pump near Kuarters Suction Tank'},
-                {name: 'Kuarters-Vertical multistage pump-2', location: 'House Pump near Kuarters Suction Tank'},
-               
-                {name: 'Distribution Tank', location: 'Kuarters SQD & NHL Distribution Tank'},
-                {name: 'SQD Vertical multistage pump-1', location: 'House Pump near Kuarters SQD & NHL Distribution Tank'},
-                {name: 'SQD Vertical multistage pump-2', location: 'House Pump near Kuarters SQD & NHL Distribution Tank'},
-                {name: 'SQD Terrace Vertical multistage pump-1', location: 'House Pump near Kuarters SQD & NHL Distribution Tank'},
-                {name: 'SQD Terrace Vertical multistage pump-2', location: 'House Pump near Kuarters SQD & NHL Distribution Tank'},
-                {name: 'NHL Vertical multistage pump-1', location: 'House Pump near Kuarters SQD & NHL Distribution Tank'},
-                {name: 'NHL Vertical multistage pump-2', location: 'House Pump near Kuarters SQD & NHL Distribution Tank'},
-                {name: 'NHL Vertical multistage pump-3', location: 'House Pump near Kuarters SQD & NHL Distribution Tank'},
-                {name: 'NHL Vertical multistage pump-4', location: 'House Pump near Kuarters SQD & NHL Distribution Tank'}
-                
-                // {name: 'Hospital-Vertical multistage pump-2', location: 'House Pump near Hospital Distribution Tank'},
-                // {name: 'Hospital-Vertical multistage pump-3', location: 'House Pump near Hospital Distribution Tank'},
-                // {name: 'Kuarters-Vertical multistage pump-1', location: 'House Pump near Hospital Distribution Tank'},
-                // {name: 'Kuarters-Vertical multistage pump-2', location: 'House Pump near Hospital Distribution Tank'},
-                // {name: 'Kuarters-Vertical multistage pump-3', location: 'House Pump near Hospital Distribution Tank'},
-
-                
-                // {name: 'Suction Tank', location: 'Kuarters Suction Tank'},
-                // {name: 'Hospital-Vertical multistage pump-1', location: 'House Pump near Suction Tank Hospital'},
-                // {name: 'Hospital-Vertical multistage pump-2', location: 'House Pump near Suction Tank Hospital'},
-                // {name: 'Hospital-Vertical multistage pump-3', location: 'House Pump near Suction Tank Hospital'},
-                // {name: 'Kuarters-Vertical multistage pump-1', location: 'House Pump near Suction Tank Hospital'},
-                // {name: 'Kuarters-Vertical multistage pump-2', location: 'House Pump near Suction Tank Hospital'},
-                // {name: 'Kuarters-Vertical multistage pump-3', location: 'House Pump near Suction Tank Hospital'},
-
-                
-                // {name: 'Suction Tank for Hospital', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
-                // {name: 'Booster Pump-1', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
-                // {name: 'Booster Pump-2', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
-                // {name: 'Booster Pump-3', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
-
-                // {name: 'Suction Tank for Quarters', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
-                // {name: 'Booster Pump-1', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
-                // {name: 'Booster Pump-2', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
-                // {name: 'Booster Pump-3', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
-                
-                // {name: 'Storage Tank', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
-                // {name: 'Distribution Pump', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
-                // {name: 'Booster Pump-1', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
-                // {name: 'Booster Pump-2', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
-                // {name: 'Booster Pump-3', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
-                // {name: 'Booster Pump-4', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
-                // {name: 'Booster Pump-5', location: 'Domestic Cold Water-Suction Pump (Rooftop)'}
-            ],
-            
-            // 'WATER SUPPLY SYSTEM': [
-            //     {name: 'Storage Tank', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
-            //     {name: 'Suction Tank for Hospital', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
-            //     {name: 'Booster Pump-1', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
-            //     {name: 'Booster Pump-2', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
-            //     {name: 'Booster Pump-3', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
-
-            //     {name: 'Suction Tank for Quarters', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
-            //     {name: 'Booster Pump-1', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
-            //     {name: 'Booster Pump-2', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
-            //     {name: 'Booster Pump-3', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
-                
-            //     {name: 'Storage Tank', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
-            //     {name: 'Distribution Pump', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
-            //     {name: 'Booster Pump-1', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
-            //     {name: 'Booster Pump-2', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
-            //     {name: 'Booster Pump-3', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
-            //     {name: 'Booster Pump-4', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
-            //     {name: 'Booster Pump-5', location: 'Domestic Cold Water-Suction Pump (Rooftop)'}
+            // 'MAMMO UNIT': [
+            //     {name: 'Autoclave-1', location: 'CSSD'}, 
+            //     {name: 'Autoclave-2', location: 'CSSD'},
+            //     {name: 'Autoclave', location: 'Lab'},
             // ],
             
-            // 'WATER SUPPLY SYSTEM': [
-            //     {name: 'Influent Pump 1', location: 'Sewerage System'},
-            //     {name: 'Influent Pump 2', location: 'Sewerage System'},
-            //     {name: 'Return Waste Sludge Pump ', location: 'Sewerage System'},
-            //     {name: 'Air Blower Pump 1', location: 'Sewerage System'},
-            //     {name: 'Air Blower Pump 2', location: 'Sewerage System'},
-            //     {name: 'Sludge Pump SDB', location: 'Sewerage System'},
-            //     {name: 'Storage Tank', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
-            //     {name: 'Booster Pump-1', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
-            //     {name: 'Booster Pump-2', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
-            //     {name: 'Booster Pump-3', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
-            //     {name: 'Booster Pump-1', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
-            //     {name: 'Booster Pump-2', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
-            //     {name: 'Booster Pump-3', location: 'Domestic Cold Water-Water Supply Hospital & Quarters'},
-            //     {name: 'Suction Pump-1', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
-            //     {name: 'Booster Pump-2', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
-            //     {name: 'Booster Pump-3', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
-            //     {name: 'Booster Pump-4', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
-            //     {name: 'Booster Pump-5', location: 'Domestic Cold Water-Suction Pump (Rooftop)'},
-            //     {name: 'Booster Pump-6', location: 'Domestic Cold Water-Suction Pump (Rooftop)'}
+            // 'ANGIO SYSTEM': [
+            //     {name: 'Oxygen VIE Tank', location: 'Hadapan MSB'},
+            //     {name: 'NO2 Tank', location: 'Bilik Medical Gas'},
+            //     {name: 'Entonox', location: 'Bilik Medical Gas'},
+            //     {name: 'Surgical Air Compressor', location: 'Bilik Medical Gas'}
             // ],
             
-            'ELECTRICAL SUPPLY': [
-                {name: 'VCB 1(Incomer 1)', location: 'Bilik HT'},
-                {name: 'VCB 2(Incomer 2)', location: 'Bilik HT'},
-                {name: 'VCB 3(TX Feeder 1)', location: 'Bilik HT'},
-                {name: 'VCB 4(TX Feeder 2)', location: 'Bilik HT'},
-                {name: 'TX 1', location: 'Bilik TX'},
-                {name: 'TX 2', location: 'Bilik TX'},
-                {name: 'ACB 1(MSB)', location: 'Bilik LV'}, 
-                {name: 'ACB 2(MSB)', location: 'Bilik LV'},
-                {name: 'MCCB (EMSB 1)', location: 'Bilik LV'},
-                {name: 'MCCB (EMSB 2)', location: 'Bilik LV'},
-                {name: 'ACB Chiller', location: 'Bilik Chiller'},
-                {name: 'TBD 1', location: 'AMF Board'},
-                {name: 'TBD 2', location: 'AMF Board'}
-            ],
+            // 'X-RAY SYSTEM': [
+            //     {name: 'Lift-Toshiba-1', location: 'Block Patient & Staff'},
+            //     {name: 'Lift-Toshiba-2', location: 'Block Patient & Staff'},
+            //     {name: 'Lift-Toshiba', location: 'Lobby'}
+            // ],
             
-            'BAS SYSTEM': [
-                {name: 'BAS Panel', location: 'Main Block(sila update location)'}
+            'WATER PURIFIER': [
+                {name: 'Water Purifier (Asset No: AGJ000281)', location: 'Main Building'}
             ],
+          
+            // 'RADIOTHERAPY': [
+            //     {name: 'BAS Panel', location: 'Main Block(sila update location)'}
+            // ],
             
-            'CHILLER AND COOLING TOWER': [
-                {name: 'Screw-Chiller-1', location: 'Bilik Chiller'},
-                {name: 'Screw-Chiller-2', location: 'Bilik Chiller'},
-                {name: 'Screw-Chiller-3', location: 'Bilik Chiller'},
-                {name: 'Cooling-Tower-1', location: 'Bilik Chiller'},
-                {name: 'Cooling-Tower-2', location: 'Bilik Chiller'},
-                {name: 'Cooling-Tower-3', location: 'Bilik Chiller'},
-                {name: 'Primary-Chilled-Water-Pump-1', location: 'Bilik Chiller'},
-                {name: 'Primary-Chilled-Water-Pump-2', location: 'Bilik Chiller'},
-                {name: 'Primary-Chilled-Water-Pump-3', location: 'Bilik Chiller'},
-                {name: 'Primary-Condensate-Water-Pump-1', location: 'Bilik Chiller'},
-                {name: 'Primary-Condensate-Water-Pump-2', location: 'Bilik Chiller'},
-                {name: 'Primary-Condensate-Water-Pump-3', location: 'Bilik Chiller'}
-                //{name: 'Chiller 1', location: 'Bilik Chiller'}, 
-                //{name: 'Chiller 2', location: 'Bilik Chiller'},
-                //{name: 'Chiller 3', location: 'Bilik Chiller'},
-                //{name: 'Cooling Tower 1', location: 'Bilik Chiller'},
-                //{name: 'Cooling Tower 2', location: 'Bilik Chiller'},
-                //{name: 'Cooling Tower 3', location: 'Bilik Chiller'},
-                //{name: 'Expansion Tank', location: 'Bilik Chiller'},
-                //{name: 'Make Up Tank', location: 'Bilik Chiller'},
-                //{name: 'CHWP 1', location: 'Bilik Chiller'},
-                //{name: 'CHWP 2', location: 'Bilik Chiller'},
-                //{name: 'CHWP 3', location: 'Bilik Chiller'},
-                //{name: 'CWP 1', location: 'Bilik Chiller'},
-                //{name: 'CWP 2', location: 'Bilik Chiller'},
-                //{name: 'CWP 3', location: 'Bilik Chiller'},
-            ],
-            
-            'FIRE PROTECTION SYSTEM': [
-                {name: 'Main Fire Alarm Panel', location: 'Control Room'},
-                {name: 'Hydrant Tank', location: 'Hydrant'},
-                {name: 'Hydrant Duty Pump', location: 'Hydrant'},
-                {name: 'Hydrant Jockey Pump', location: 'Hydrant'},
-                {name: 'Hydrant Standby Pump', location: 'Hydrant'},
-                {name: 'Horse Reel Tank', location: 'Horsereel'},
-                {name: 'Hydrant Standby Pump', location: 'Hydrant'},
-            ],
-            
-            'AUTOCLAVE': [
-                {name: 'Autoclave-1', location: 'CSSD'}, 
-                {name: 'Autoclave-2', location: 'CSSD'},
-                {name: 'Autoclave', location: 'Lab'},
-            ],
-            
-            'MEDICAL GAS PIPELINE SYSTEM': [
-                {name: 'Oxygen VIE Tank', location: 'Hadapan MSB'},
-                {name: 'NO2 Tank', location: 'Bilik Medical Gas'},
-                {name: 'Entonox', location: 'Bilik Medical Gas'},
-                {name: 'Vacuum Pump', location: 'Bilik Medical Gas'},
-                {name: 'Medical Air Compressor', location: 'Bilik Medical Gas'},
-                {name: 'Surgical Air Compressor', location: 'Bilik Medical Gas'}
-            ]
+            // 'BRACHYTHERAPY': [
+            //     {name: 'Screw-Chiller-1', location: 'Bilik Chiller'},
+            //     {name: 'Screw-Chiller-2', location: 'Bilik Chiller'},
+            //     {name: 'Screw-Chiller-3', location: 'Bilik Chiller'},
+            //     {name: 'Primary-Condensate-Water-Pump-3', location: 'Bilik Chiller'}
+            // ],
+                     
+            // 'OTHERS': [
+            //     {name: 'Main Fire Alarm Panel', location: 'Control Room'},
+            //     {name: 'Hydrant Tank', location: 'Hydrant'},
+            //     {name: 'Hydrant Duty Pump', location: 'Hydrant'},
+            //     {name: 'Hydrant Standby Pump', location: 'Hydrant'}
+            // ]
         };
 
         const mainMenuPage = document.getElementById('mainMenuPage');
