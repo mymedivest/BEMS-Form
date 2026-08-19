@@ -24,7 +24,8 @@
         .page.active {
             display: block;
         }
-        /* KOD YANG TELAH DIBETULKAN: Menggantikan @apply dengan CSS Standard */
+
+        /* KOD YANG TELAH DIBETULKAN: Menggantikan @ apply dengan CSS Standard */
         .asset-card {
             background-color: rgba(203, 205, 205, 0.4); /* bg-white */
             padding: 1.5rem; /* p-6 */
@@ -40,6 +41,7 @@
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); /* hover:shadow-xl */
             background-color: #25ff5c; /* hover:bg-blue-700 */
         }
+
         .btn-primary {
             background-color: rgb(4, 0, 126); /* bg-blue-600 */
             color: rgb(255, 255, 255); /* text-white */
@@ -53,6 +55,7 @@
         .btn-primary:hover {
             background-color: #25ff5c; /* hover:bg-blue-700 */
         }
+
         .btn-secondary {
             background-color: #e5e7eb; /* bg-gray-200 */
             color: #374151; /* text-gray-800 */
@@ -66,11 +69,13 @@
         .btn-secondary:hover {
             background-color: #d1d5db; /* hover:bg-gray-300 */
         }
+
         /* GAYA BARU: Hanya untuk butang "Hantar Aset Ini Sahaja" */
         .submit-single-asset-button {
             background-color: #ebebeb; /* Contoh: Warna Jingga (Orange) */
             color: #374151; /* Teks putih */
         }
+
         .submit-single-asset-button:hover {
             background-color: #25ff5c; /* Contoh: Warna Jingga Gelap semasa hover */
         }
@@ -93,10 +98,12 @@
         #myBtn:hover {
         background-color: #555; /* Add a dark-grey background on hover */
         }
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
+
         /* ========================
         // Gaya Floating Button
         // ========================*/
@@ -137,46 +144,44 @@
                 display: none !important; /* Sembunyikan teks pada mobile */
             }
         }
-    </style>
+
+        </style>
 </head>
 <button onclick="topFunction()" id="myBtn" title="Go to top">🔼</button> 
-    <!-- Pop-up Mesej -->
+
     <div id="messageBox" class="fixed top-4 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-6 py-3 rounded-full shadow-lg z-50 transition-all duration-300 -translate-y-20 opacity-0">
         <span id="messageText"></span>
     </div>
-   <!-- Logos Bersebelahan -->
+
     <div class="flex flex-col sm:flex-row items-center justify-center space-x-0 sm:space-x-8 mb-8 logo-group">
         <img src="https://raw.githubusercontent.com/femsmedivest-sys/Critical-System-FEMS-Medivest/a63c8c6a8377b4c78455ac131fa4434ea60a3e75/anything%20is%20possible.webp" alt="Logo Anything Is Possible" class="h-16 w-auto mb-4 sm:mb-0">
         <img src="https://raw.githubusercontent.com/femsmedivest-sys/Critical-System-FEMS-Medivest/a63c8c6a8377b4c78455ac131fa4434ea60a3e75/medivest.webp" alt="Logo Medivest" class="h-16 w-auto">
     </div>
-    <!-- Kontena Utama -->
+
     <div class="container bg-white p-6 sm:p-8 rounded-2xl shadow-xl w-full">
-        <!-- Halaman Menu Utama -->
         <div id="mainMenuPage" class="page active">
             <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">TYPE OF CRITICAL SYSTEM:</h1>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Butang untuk setiap jenis aset -->
-                <button class="asset-card" onclick="showForm('GENERATOR SET')">GENERATOR SET</button>
-                <button class="asset-card" onclick="showForm('AIR HANDLING UNIT')">AIR HANDLING UNIT</button>
-                <button class="asset-card" onclick="showForm('WATER SUPPLY SYSTEM')">WATER SUPPLY SYSTEM</button>
-                <button class="asset-card" onclick="showForm('ELECTRICAL SUPPLY')">ELECTRICAL SUPPLY</button>
-                <button class="asset-card" onclick="showForm('LIFT')">LIFT</button>
-                <button class="asset-card" onclick="showForm('BAS SYSTEM')">BAS SYSTEM</button>
-                <button class="asset-card" onclick="showForm('CHILLER AND COOLING TOWER')">CHILLER AND COOLING TOWER</button>
-                <button class="asset-card" onclick="showForm('FIRE PROTECTION SYSTEM')">FIRE PROTECTION SYSTEM</button>
-                <button class="asset-card" onclick="showForm('AUTOCLAVE')">AUTOCLAVE</button>
-                <button class="asset-card" onclick="showForm('MEDICAL GAS PIPELINE SYSTEM')">MEDICAL GAS PIPELINE SYSTEM</button>
+                <!-- <button class="asset-card" onclick="showForm('CT SCANNER')">Scanning Systems, Computed Tomography (CT Scanner)</button>
+                <button class="asset-card" onclick="showForm('MRI SCANNER')">Scanning Systems, Magnetic Resonance Imaging, Full-Body (MRI Scanner)</button>
+                <button class="asset-card" onclick="showForm('PET SCANNER')">PET Scanner</button>
+                <button class="asset-card" onclick="showForm('MAMMO UNIT')">Radiographic Units, Mammographic</button>
+                <button class="asset-card" onclick="showForm('ANGIO SYSTEM')">Radiographic/Fluoroscopic Systems, Angiographic/Interventional</button>
+                <button class="asset-card" onclick="showForm('X-RAY SYSTEM')">Radiographic/Fluoroscopic Systems, General-Purpose</button> -->
+                <button class="asset-card" onclick="showForm('WATER PURIFIER')">Water Purification System</button>
+                <!-- <button class="asset-card" onclick="showForm('RADIOTHERAPY')">Radiotherapy</button>
+                <button class="asset-card" onclick="showForm('BRACHYTHERAPY')">Brachytherapy</button>
+                <button class="asset-card" onclick="showForm('OTHERS')">OTHERS</button> -->
             </div>
         </div>
-        <!-- Halaman Borang Dinamik -->
+
         <div id="formPage" class="page">
             <h1 id="formTitle" class="text-3xl font-bold text-center text-gray-800 mb-6"></h1>
             <form id="assetForm" class="space-y-6">
 
                 <div id="formFieldsContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <!-- Medan borang akan ditambah di sini secara dinamik -->
-                </div>
-                <!-- Butang Hantar dan Back -->
+                    </div>
+
                 <div class="flex justify-between space-x-4 mt-6">
                     <button type="button" id="backButton" class="btn-secondary w-1/2">
                         &larr; Kembali ke Menu Utama
@@ -189,7 +194,6 @@
         </div>
     </div>
 
-    <!--BARIS UNTUK TAMBAH ASSET DAN LOCATION ASSET-->
     <script>
         // Get the button:
             let mybutton = document.getElementById("myBtn");
@@ -210,190 +214,71 @@
             document.body.scrollTop = 0; // For Safari
             document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
             }
-        const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzEqrZI2uaMrzFo52BXS5bzj2WmKlUjEaJSog-08TCfAqZNigdysGHDRVB_0msmzzI/exec';
+        const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwisD8IL7Zeaq2Gb4012hELmJyhpOytQIsKGg9U9vJEzOibkzAsRLFbe1b1HkKtJ1t5/exec';//Write the API here
 
         const assetLists = {
-            'GENERATOR SET': [
-                {name: 'GenSet-1 400kVA', location: 'Block Engineering'}, 
-                {name: 'GenSet-2 400kVA', location: 'Block Engineering'},
-                {name: 'GenSet 132kVA', location: 'Block OT'},
-                {name: 'GenSet 31kVA', location: 'Dapur'},
-                {name: 'GenSet 200kVA', location: 'Chiller'}
-            ],
+            // 'CT SCANNER': [
+            //     {name: 'Genset-1 (400kVa)', location: 'Bilik Genset'}, 
+            //     {name: 'Genset-2 (400kVa)', location: 'Bilik Genset'}
+            // ],
 
-            'AIR HANDLING UNIT': [
-                {name: 'AHU CSSU AND  LAB', location: 'Plantroom AHU 1'}, 
-                {name: 'AHU WAD 3, WAD 4 AND ICU', location: 'Plantroom AHU 1'},
-                {name: 'AHU WAD 1 AND AHU WAD 2', location: 'Plantroom AHU 2'},
-                {name: 'AHU FARMASI, X-RAY CORRIDOR AND KP 1', location: 'Plantroom AHU 2'},
-                {name: 'AHU X-RAY', location: 'Plantroom AHU 2'},
-                {name: 'AHU OT 1', location: 'Plantroom OT'},
-                {name: 'AHU GENERAL OT 1', location: 'Plantroom OT'},
-                {name: 'AHU OT 2', location: 'Plantroom OT'},
-                {name: 'AHU GENERAL OT 2', location: 'Plantroom OT'},
-                {name: 'AHU KP 2', location: 'Block KP 2'},
-                {name: 'AHU Sterile Store', location: 'Block LAB/CSSU'},
-                {name: 'AHU Packing Area', location: 'Block LAB/CSSU'}
-                // {name: 'AHU Plantroom', location: 'Plantroom 1'}, 
-                // {name: 'AHU Lab & CSSU', location: 'Plantroom 1'},
-                // {name: 'AHU Wad 3,4,ICU', location: 'Plantroom 1'},
-                // {name: 'AHU Emergency', location: 'Plantroom 2'},
-                // {name: 'AHU Farmasi', location: 'Plantroom 2'},
-                // {name: 'AHU Wad 1 & 2', location: 'Plantroom 2'},
-                // {name: 'AHU KP 2', location: 'Admin'},
-                // {name: 'AHU OT & Koridor OT', location: 'Block OT'}                
-            ],
+            // 'MRI SCANNER': [
+            //     {name: 'VCB 1(Incomer 1)', location: 'Bilik HT'},
+            //     {name: 'VCB 2(Incomer 2)', location: 'Bilik HT'},
+            //     {name: 'VCB 3(TX Feeder 1)', location: 'Bilik HT'},
+            //     {name: 'TBD 2', location: 'AMF Board'}
+            // ],
 
-            'WATER SUPPLY SYSTEM': [
-                {name: 'Suction Tank (Reinforced concrete)- 200,000 Liter', location: 'Belakang Forensik Hospital'}, 
-                {name: 'Suction-Tank-Pump-1', location: 'Suction Tank Pump House'}, 
-                {name: 'Suction-Tank-Pump-2', location: 'Suction Tank Pump House'},
+            // 'PET SCANNER': [
+            //     {name: 'Suction Tank', location: 'Hospital Suction Tank'},
+            //     {name: 'Hospital-Vertical multistage pump-1', location: 'House Pump near Hospital Suction Tank'},
+            //     {name: 'Hospital-Vertical multistage pump-2', location: 'House Pump near Hospital Suction Tank'},
+            //     {name: 'Hospital-Vertical multistage pump-3', location: 'House Pump near Hospital Suction Tank'},
+            //     {name: 'Kuarters-Vertical multistage pump-1', location: 'House Pump near Hospital Suction Tank'},
+            //     {name: 'Kuarters-Vertical multistage pump-2', location: 'House Pump near Hospital Suction Tank'}
+            // ],
 
-                {name: 'Distribution Tank (Fiberglass Reinforce Plastics) - 60,000 Liter', location: 'Plant Room AHU 1'}, 
-                //{name: 'Pump-1', location: 'Plant Room AHU 1'}, 
-                //{name: 'Pump-2', location: 'Plant Room AHU 1'},
-
-                {name: 'Elevated Tank (Fiberglass Reinforce Plastics) - 24,000 Liter)', location: 'Belakang Kejuruteraan Hospital'},
-                {name: 'Elevated-Tank-Pump-1', location: 'Suction Tank Pump House'},
-                {name: 'Elevated-Tank-Pump-2', location: 'Suction Tank Pump House'}
-            ],
-            // 'WATER SUPPLY SYSTEM': [
-            //     {name: 'Elevated Tank', location: 'Block Engineering'}, 
-            //     {name: 'Main Tank', location: 'Block Engineering'},
-            //     {name: 'Pump Suction Tank', location: 'Block Engineering'},
-            //     {name: 'Pump Elevated 1', location: 'Block Engineering'},
-            //     {name: 'Pump Elevated 1', location: 'Block Engineering'},
-            //     {name: 'Pump Main Tank 1', location: 'Block Engineering'},
-            //     {name: 'Pump Main Tank 2', location: 'Block Engineering'},
+            // 'MAMMO UNIT': [
+            //     {name: 'Autoclave-1', location: 'CSSD'}, 
+            //     {name: 'Autoclave-2', location: 'CSSD'},
+            //     {name: 'Autoclave', location: 'Lab'},
             // ],
             
-            'ELECTRICAL SUPPLY': [
-                {name: 'Spare', location: 'Block Engineering'}, 
-                {name: 'ACB 1', location: 'Block Engineering'}, 
-                {name: 'ACB 2', location: 'Block Engineering'},
-                {name: 'ACB 3', location: 'Block Engineering'},
-                {name: 'TBD 1', location: 'AMF Board'},
-                {name: 'TBD 2', location: 'AMF Board'}
-            ],
+            // 'ANGIO SYSTEM': [
+            //     {name: 'Oxygen VIE Tank', location: 'Hadapan MSB'},
+            //     {name: 'NO2 Tank', location: 'Bilik Medical Gas'},
+            //     {name: 'Entonox', location: 'Bilik Medical Gas'},
+            //     {name: 'Surgical Air Compressor', location: 'Bilik Medical Gas'}
+            // ],
             
-            'BAS SYSTEM': [
-                {name: 'Chiller Alco Monitoring & Control Panel', location: 'Block KP 1'}
-            ],
+            // 'X-RAY SYSTEM': [
+            //     {name: 'Lift-Toshiba-1', location: 'Block Patient & Staff'},
+            //     {name: 'Lift-Toshiba-2', location: 'Block Patient & Staff'},
+            //     {name: 'Lift-Toshiba', location: 'Lobby'}
+            // ],
             
-            'CHILLER AND COOLING TOWER': [
-                {name: 'Chiller Alco 1', location: 'Plantroom'},
-                {name: 'Chiller Alco 2', location: 'Plantroom'},
-                {name: 'Chiller Alco 3', location: 'Plantroom'},
-                {name: 'CONDENSER WATER PUMP CHILLER 1 1', location: 'Plantroom'},
-                {name: 'CONDENSER WATER PUMP CHILLER 1 2', location: 'Plantroom'},
-                {name: 'CONDENSER WATER PUMP CHILLER 2 1', location: 'Plantroom'},
-                {name: 'CONDENSER WATER PUMP CHILLER 2 2', location: 'Plantroom'},
-                {name: 'CONDENSER WATER PUMP CHILLER 3 1', location: 'Plantroom'},
-                {name: 'CONDENSER WATER PUMP CHILLER 3 2', location: 'Plantroom'},
-                {name: 'CHILLED WATER PUMP 1', location: 'Plantroom'},
-                {name: 'CHILLED WATER PUMP 2', location: 'Plantroom'},
-                {name: 'CHILLED WATER PUMP 3', location: 'Plantroom'},
-                {name: 'CHILLER SMARTECH 1', location: 'Plantroom OT'},
-                {name: 'CHILLER SMARTECH 2', location: 'Plantroom OT'},
-                {name: 'CHILLER SMARTECH 3', location: 'Plantroom OT'},
-                {name: 'CHILLER WATER PUMP SMARTECH 1', location: 'Plantroom OT'},
-                {name: 'CHILLER WATER PUMP SMARTECH 2', location: 'Plantroom OT'},
-                {name: 'CHILLER WATER PUMP SMARTECH 3', location: 'Plantroom OT'},
-                {name: 'CHILLER DAIKIN 1', location: 'Plantroom OT'},
-                {name: 'CHILLER DAIKIN 2', location: 'Plantroom OT'},
-                {name: 'CHILLER DAIKIN 3', location: 'Plantroom OT'},
-                {name: 'CHILLER DAIKIN 4', location: 'Plantroom OT'},
-                {name: 'CHILLER WATER PUMP DAIKIN 1', location: 'Plantroom OT'},
-                {name: 'CHILLER WATER PUMP DAIKIN 2', location: 'Plantroom OT'},
-                // {name: 'Air-Cooled-Chiller-1', location: 'Plantroom'},
-                // {name: 'Air-Cooled-Chiller-2', location: 'Plantroom'},
-                // {name: 'Air-Cooled-Chiller-3', location: 'Plantroom'},
-                // {name: 'Air-Cooled-Chiller-4', location: 'Plantroom'},
-                // {name: 'Evaporative-Chiller-1', location: 'Plantroom'},
-                // {name: 'Evaporative-Chiller-2', location: 'Plantroom'},
-                // {name: 'Evaporative-Chiller-3', location: 'Plantroom'},
-                // {name: 'Primary-Chilled-Water-Pump-1', location: 'Plantroom'},
-                // {name: 'Primary-Chilled-Water-Pump-2', location: 'Plantroom'},
-                // {name: 'Primary-Chilled-Water-Pump-3', location: 'Plantroom'},
-                // {name: 'Primary-Chilled-Water-Pump-4', location: 'Plantroom'},
-                // {name: 'Primary-Chilled-Water-Pump-5', location: 'Plantroom'},
-                // {name: 'Primary-Chilled-Water-Pump-6', location: 'Plantroom'},
-                // {name: 'Primary-Chilled-Water-Pump-7', location: 'Plantroom'},
-                // {name: 'Primary-Chilled-Water-Pump-8', location: 'Plantroom'},
-                // {name: 'Primary-Condensate-Water-Pump-1', location: 'Plantroom'},
-                // {name: 'Primary-Condensate-Water-Pump-2', location: 'Plantroom'},
-                // {name: 'Primary-Condensate-Water-Pump-3', location: 'Plantroom'},
-                // {name: 'Primary-Condensate-Water-Pump-4', location: 'Plantroom'},
-                // {name: 'Primary-Condensate-Water-Pump-5', location: 'Plantroom'},
-                // {name: 'Primary-Condensate-Water-Pump-6', location: 'Plantroom'},  
-                
-                //{name: 'Chiller 1', location: 'Block Engineering'}, 
-                //{name: 'Chiller 2', location: 'Block Engineering'},
-                //{name: 'Chiller 3', location: 'Block Engineering'},
-                //{name: 'CHWP 1', location: 'Block Engineering'},
-                //{name: 'CHWP 2', location: 'Block Engineering'},
-                //{name: 'CHWP 3', location: 'Block Engineering'},
-                //{name: 'CWP 1', location: 'Block Engineering'},
-                //{name: 'CWP 2', location: 'Block Engineering'},
-                //{name: 'CWP 3', location: 'Block Engineering'},
-                //{name: 'Chiller 1', location: 'Block OT 2'}, 
-                //{name: 'Chiller 2', location: 'Block OT 2'},
-                //{name: 'Chiller 3', location: 'Block OT 2'},
-                //{name: 'CWP 1', location: 'Block OT 2'},
-                //{name: 'CWP 2', location: 'Block OT 2'},
-                //{name: 'CWP 3', location: 'Block OT 2'},
-                //{name: 'Compressor 1', location: 'Block OT 2'},
-                //{name: 'Compressor 2', location: 'Block OT 2'},
-                //{name: 'Compressor 3', location: 'Block OT 2'},
-                //{name: 'Compressor 4', location: 'Block OT 2'},
-                //{name: 'Compressor 5', location: 'Block OT 2'},
-                //{name: 'Compressor 6', location: 'Block OT 2'},
-                //{name: 'Chiller 1', location: 'Block OT 1'}, 
-                //{name: 'Chiller 2', location: 'Block OT 1'},
-                //{name: 'Chiller 3', location: 'Block OT 1'},
-                //{name: 'Chiller 4', location: 'Block OT 1'},
-                //{name: 'CWP 1', location: 'Block OT 1'},
-                //{name: 'CWP 2', location: 'Block OT 1'},
-                //{name: 'Compressor 1', location: 'Block OT 1'},
-                //{name: 'Compressor 2', location: 'Block OT 1'},
-                //{name: 'Compressor 3', location: 'Block OT 1'},
-                //{name: 'Compressor 4', location: 'Block OT 1'},
-                //{name: 'Compressor 5', location: 'Block OT 1'},
-                //{name: 'Compressor 6', location: 'Block OT 1'},
-                //{name: 'Compressor 7', location: 'Block OT 1'},
-                //{name: 'Compressor 8', location: 'Block OT 1'}
+            'WATER PURIFIER': [
+                {name: 'Water Purifier (Asset No: PDX150353)', location: 'Main Building'},
+                {name: 'Water Purifier (Asset No: PDX150293)', location: 'Main Building'}
             ],
+          
+            // 'RADIOTHERAPY': [
+            //     {name: 'BAS Panel', location: 'Main Block(sila update location)'}
+            // ],
             
-            'FIRE PROTECTION SYSTEM': [
-                {name: 'Main Fire Alarm Panel', location: 'Block KP 1'}
-            ],
-            
-            'AUTOCLAVE': [
-                {name: 'Autoclave-1', location: 'CSSD'}, 
-                {name: 'Autoclave-2', location: 'CSSD'}
-            ],
-            
-            'MEDICAL GAS PIPELINE SYSTEM': [
-                {name: 'Compressor 1', location: 'Block Engineering'},
-                {name: 'Compressor 2', location: 'Block Engineering'},
-                {name: 'Compressor 3', location: 'Block Engineering'},
-                {name: 'Air Dryer 1', location: 'Block Engineering'},
-                {name: 'Air Dryer 2', location: 'Block Engineering'},
-                {name: 'Air Reciever 1', location: 'Block Engineering'},
-                {name: 'Air Reciever 2', location: 'Block Engineering'},
-                {name: 'Vac Pump 1', location: 'Block Engineering'},
-                {name: 'Vac Pump 2', location: 'Block Engineering'},
-                {name: 'Vac Pump 3', location: 'Block Engineering'},
-                {name: 'Vac Pump 4', location: 'Block Engineering'},
-                {name: 'AGSS 1 (Vacuum)', location: 'Block Engineering'},
-                {name: 'AGSS 2 (Vacuum)', location: 'Block Engineering'},
-                {name: 'AGSS 1 (OT)', location: 'Block Engineering'},
-                {name: 'AGSS 2 (OT)', location: 'Block Engineering'},
-                {name: 'SA7', location: 'Block OT 1'}, 
-                {name: 'Vac Pump 1', location: 'Block OT 1'},
-                {name: 'Vac Pump 2', location: 'Block OT 1'},
-                {name: 'Vacuum', location: 'Block OT 1'}
-            ]
+            // 'BRACHYTHERAPY': [
+            //     {name: 'Screw-Chiller-1', location: 'Bilik Chiller'},
+            //     {name: 'Screw-Chiller-2', location: 'Bilik Chiller'},
+            //     {name: 'Screw-Chiller-3', location: 'Bilik Chiller'},
+            //     {name: 'Primary-Condensate-Water-Pump-3', location: 'Bilik Chiller'}
+            // ],
+                     
+            // 'OTHERS': [
+            //     {name: 'Main Fire Alarm Panel', location: 'Control Room'},
+            //     {name: 'Hydrant Tank', location: 'Hydrant'},
+            //     {name: 'Hydrant Duty Pump', location: 'Hydrant'},
+            //     {name: 'Hydrant Standby Pump', location: 'Hydrant'}
+            // ]
         };
 
         const mainMenuPage = document.getElementById('mainMenuPage');
@@ -416,11 +301,13 @@
                 messageBox.classList.add('opacity-0', '-translate-y-20');
             }, 3000);
         }
+
         function showPage(page) {
             mainMenuPage.classList.remove('active');
             formPage.classList.remove('active');
             document.getElementById(page + 'Page').classList.add('active');
         }
+
         function generateFormFields(asset, index) {
             return `
                 <div class="bg-gray-50 p-4 rounded-lg shadow-inner border border-gray-200 space-y-4 mb-6 asset-card-individual">
@@ -452,11 +339,12 @@
                     <button type="button" 
                             class="btn-primary submit-single-asset-button w-full mt-4" 
                             onclick="submitSingleAsset(this)">
-                        Hantar Aset Ini
+                        Hantar Aset Ini Sahaja
                     </button>
                 </div>
             `;
         }
+
         window.showForm = function(asset) {
             formTitle.textContent = `FORM - ${asset}`;
             assetForm.dataset.assetType = asset;
@@ -468,12 +356,14 @@
             });
             showPage('form');
         };
+
         backButton.addEventListener('click', () => {
             assetForm.reset();
             showPage('mainMenu');
         });
+
         // FUNGSI BARU: MENGENDALIKAN PENGHANTARAN SATU ASET SAHAJA
-        window.submitSingleAsset = async function(button) {
+        async function submitSingleAsset(button) {
             const formDiv = button.closest('.asset-card-individual'); // Cari kad aset induk
             const statusSelect = formDiv.querySelector('select[name^="status"]');
             
@@ -481,10 +371,13 @@
                 showMessage("Sila pilih status sebelum menghantar.", false);
                 return;
             }
+
             button.disabled = true;
             const originalText = button.textContent;
             button.textContent = 'Menghantar...';
-            const assetType = assetForm.dataset.assetType;       
+
+            const assetType = assetForm.dataset.assetType;
+            
             // Extract data for the single asset
             const data = [{
                 location: formDiv.querySelector('input[name^="location"]').value,
@@ -505,7 +398,7 @@
                     body: JSON.stringify({ data: JSON.stringify(data) }),
                 });
 
-                showMessage(`Aset '${data[0].assetName}' Berjaya dihantar!`, true);
+                showMessage(`Aset '${data[0].assetName}' berjaya dihantar!`, true);
                 
                 // Reset/Kosongkan borang aset yang telah dihantar
                 formDiv.querySelector('select[name^="status"]').value = ''; 
@@ -521,6 +414,7 @@
             }
         }
         /////// TAMAT FUNGSI BARU ////////
+
         // FUNGSI ASAL: MENGENDALIKAN PENGHANTARAN BORANG UTAMA (SEMUA DIPILIH)
         assetForm.addEventListener('submit', async (event) => {
             event.preventDefault();
@@ -553,12 +447,14 @@
                     });
                 }
             });
+
             if (data.length === 0) {
                 showMessage("Sila isi sekurang-kurangnya satu borang.", false);
                 submitButton.disabled = false;
                 submitButton.textContent = 'Hantar Borang (Semua)';
                 return;
             }
+
             try {
                 const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
                     method: 'POST',
@@ -592,11 +488,3 @@
         </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
