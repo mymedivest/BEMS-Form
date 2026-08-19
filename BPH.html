@@ -145,7 +145,7 @@
             }
         }
 
-</style>
+        </style>
 </head>
 <button onclick="topFunction()" id="myBtn" title="Go to top">🔼</button> 
 
@@ -162,16 +162,16 @@
         <div id="mainMenuPage" class="page active">
             <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">TYPE OF CRITICAL SYSTEM:</h1>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <button class="asset-card" onclick="showForm('GENERATOR SET')">GENERATOR SET</button>
-                <button class="asset-card" onclick="showForm('AIR HANDLING UNIT')">AIR HANDLING UNIT</button>
-                <button class="asset-card" onclick="showForm('WATER SUPPLY SYSTEM')">WATER SUPPLY SYSTEM</button>
-                <button class="asset-card" onclick="showForm('ELECTRICAL SUPPLY')">ELECTRICAL SUPPLY</button>
-                <button class="asset-card" onclick="showForm('BAS SYSTEM')">BAS SYSTEM</button>
-                <button class="asset-card" onclick="showForm('LIFT')">LIFT</button>
-                <button class="asset-card" onclick="showForm('CHILLER AND COOLING TOWER')">CHILLER AND COOLING TOWER</button>
-                <button class="asset-card" onclick="showForm('FIRE PROTECTION SYSTEM')">FIRE PROTECTION SYSTEM</button>
-                <button class="asset-card" onclick="showForm('AUTOCLAVE')">AUTOCLAVE</button>
-                <button class="asset-card" onclick="showForm('MEDICAL GAS PIPELINE SYSTEM')">MEDICAL GAS PIPELINE SYSTEM</button>
+                <button class="asset-card" onclick="showForm('CT SCANNER')">Scanning Systems, Computed Tomography (CT Scanner)</button>
+                <!-- <button class="asset-card" onclick="showForm('MRI SCANNER')">Scanning Systems, Magnetic Resonance Imaging, Full-Body (MRI Scanner)</button> -->
+                <!-- <button class="asset-card" onclick="showForm('PET SCANNER')">PET Scanner</button> -->
+                <button class="asset-card" onclick="showForm('MAMMO UNIT')">Radiographic Units, Mammographic</button>
+                <!-- <button class="asset-card" onclick="showForm('ANGIO SYSTEM')">Radiographic/Fluoroscopic Systems, Angiographic/Interventional</button> -->
+                <button class="asset-card" onclick="showForm('X-RAY SYSTEM')">Radiographic/Fluoroscopic Systems, General-Purpose</button>
+                <button class="asset-card" onclick="showForm('WATER PURIFIER')">Water Purification System</button>
+                <!-- <button class="asset-card" onclick="showForm('RADIOTHERAPY')">Radiotherapy</button>
+                <button class="asset-card" onclick="showForm('BRACHYTHERAPY')">Brachytherapy</button> -->
+                <!-- <button class="asset-card" onclick="showForm('OTHERS')">OTHERS</button> -->
             </div>
         </div>
 
@@ -214,197 +214,57 @@
             document.body.scrollTop = 0; // For Safari
             document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
             }
-        const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyTvLZAO7cmxAiX-i6ZyjoChvl4bB0N0iyLeXK7n8gsCzQNzfedibIiEcQhLOl61Z2Ugg/exec';//Write the API here
+        const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwisD8IL7Zeaq2Gb4012hELmJyhpOytQIsKGg9U9vJEzOibkzAsRLFbe1b1HkKtJ1t5/exec';//Write the API here
 
         const assetLists = {
-            'GENERATOR SET': [
-                {name: 'GENSET-1 (350kVa)', location: 'Blok A'}, 
-                {name: 'GENSET-2 (350kVa)', location: 'Blok A'},
-                {name: 'GENSET-1 (850kVa)', location: 'Blok B'},
-                {name: 'GENSET-2 (850kVa)', location: 'Blok B'}
+            'CT SCANNER': [
+                {name: 'CT Scanner (Asset No: JHR005/003323)', location: 'Main Building'}
             ],
 
-            'ELECTRICAL SUPPLY': [
-                {name: 'VCB-1', location: 'Bilik HT'},
-                {name: 'VCB-2', location: 'Bilik HT'},
-                {name: 'VCB-3', location: 'Bilik HT'},
-                {name: 'VCB-4', location: 'Bilik HT'},
-                {name: 'VCB-5', location: 'Bilik HT'},
-                {name: 'VCB-6', location: 'Bilik HT'},
-                {name: 'ACB-1', location: 'LV Blok A'},
-                {name: 'ACB-2', location: 'LV Blok A'},
-                {name: 'ACB-3', location: 'LV Blok A'},
-                {name: 'ACB-4', location: 'LV Blok A'},
-                {name: 'TX-1', location: 'Blok B'},
-                {name: 'TX-2', location: 'Blok B'},
-                {name: 'TX-3', location: 'Blok B'},
-                {name: 'ACB-1', location: 'LV Blok B'},
-                {name: 'ACB-2', location: 'LV Blok B'},
-                {name: 'ACB-3', location: 'LV Blok B'},
-                {name: 'ACB-4', location: 'LV Blok B'},
-                {name: 'ACB-5', location: 'LV Blok B'},
-                {name: 'ACB-6', location: 'LV Blok B'},
-                {name: 'ACB-7', location: 'LV Blok B'},
-                {name: 'ACB-1', location: 'MSSB Blok B'},
-                {name: 'ACB-2', location: 'MSSB Blok B'},
-                {name: 'ACB-3', location: 'MSSB Blok B'},
-                {name: 'ACB-4', location: 'MSSB Blok B'},
-                {name: 'TX-1', location: 'Transformer'},
-                {name: 'TX-2', location: 'Transformer'},
-                {name: 'TX-3', location: 'Transformer'},
-                {name: 'TX-4', location: 'Transformer'},
-                {name: 'MSB Essential', location: 'LV'},
-                {name: 'MSB Non Essential', location: 'LV'},
-                {name: 'TBD 1', location: 'AMF Board'},
-                {name: 'TBD 2', location: 'AMF Board'}
-            ],
-            
-            'AIR HANDLING UNIT': [
-                {name: 'AHU-A1', location: 'TBC'},
-                {name: 'AHU-A2', location: 'TBC'},
-                {name: 'AHU-A3', location: 'TBC'},
-                {name: 'AHU-A4', location: 'TBC'},
-                {name: 'AHU-4A', location: 'TBC'},
-                {name: 'AHU-4B', location: 'TBC'},
-                {name: 'AHU-5A', location: 'TBC'},
-                {name: 'AHU-5B', location: 'TBC'},
-                {name: 'AHU-6A', location: 'TBC'},
-                {name: 'AHU-6B', location: 'TBC'},
-                {name: 'AHU-(1-1)', location: 'TBC'},
-                {name: 'AHU-(1-2)', location: 'TBC'},
-                {name: 'AHU-(1-3)', location: 'TBC'},
-                {name: 'AHU-(1-4)', location: 'TBC'},
-                {name: 'AHU-(2-1)', location: 'TBC'},
-                {name: 'AHU-(2-2)', location: 'TBC'},
-                {name: 'AHU-(2-3)', location: 'TBC'},
-                {name: 'AHU-(2-4)', location: 'TBC'},
-                {name: 'AHU OT-(1-3)', location: 'TBC'},
-                {name: 'AHU OT-4', location: 'TBC'},
-                {name: 'AHU-(3-1)', location: 'TBC'},
-                {name: 'AHU-(3-2)', location: 'TBC'},
-             ],
+            // 'MRI SCANNER': [
+            //     {name: 'MRI Scanner (Asset No: JHR004/004678)', location: 'Main Building'}
+            // ],
 
-            'LIFT': [
-                {name: 'Lift-Otis-1', location: 'Block A'},
-                {name: 'Lift-Otis-2', location: 'Block A'},
-                {name: 'Lift-Otis-1', location: 'Block B'},
-                {name: 'Lift-Otis-2', location: 'Block B'},
-                {name: 'Lift-Otis-3', location: 'Block B'},
-                {name: 'Lift-Otis-4', location: 'Block B'}
-            ],
-            
-            'WATER SUPPLY SYSTEM': [
-                {name: 'Suction Tank Blok A  (RC) - 150,000 Liter', location: 'Pump House (PMP)'}, 
-                {name: 'Pump-1', location: 'Pump House'}, 
-                {name: 'Pump-2', location: 'Pump House'},
+            // 'PET SCANNER': [
+            //     {name: 'Pet Scanner (Asset No: JHR001/010368)', location: 'Main Building'},
+            //     {name: 'Pet Scanner (Asset No: JHR001/000087)', location: 'Main Building'}
+            // ],
 
-                {name: 'Elevated Tank Blok (FRP) - 300,000 Liter', location: 'Plant Room 1 (PR1)'}, 
-
-                {name: 'Suction Tank Blok B  (FRP) - 135,000 Liter', location: 'M&E'}, 
-                {name: 'Pump-1', location: 'M&E - Pump House'}, 
-                {name: 'Pump-2', location: 'M&E - Pump House'},
-                
-                {name: 'Elevated Tank Blok B  (FRP) - 244,000 Liter', location: 'Plant Room 7 (PR7)'}
+            'MAMMO UNIT': [
+                {name: 'Mammo Unit (Asset No: BPH20591)', location: 'Main Building'}
             ],
             
+            // 'ANGIO SYSTEM': [
+            //     {name: 'Angio System (Asset No:HSA150899)', location: 'Main Building'},
+            //     {name: 'Angio System (Asset No:HSA151313)', location: 'Main Building'},
+            //     {name: 'Angio System (Asset No:JHR001/008969)', location: 'Main Building'}
+            // ],
             
-            'BAS SYSTEM': [
-                {name: 'Suction Tank A', location: 'TBC'},
-                {name: 'Suction Tank B', location: 'TBC'},
-                {name: 'Distribution Tank A', location: 'TBC'},
-                {name: 'Distribution Tank B', location: 'TBC'},
+            'X-RAY SYSTEM': [
+                {name: 'X-Ray (Asset No: BPH151884)', location: 'Main Building'}
             ],
             
-            'CHILLER AND COOLING TOWER': [
-                {name: 'Magnetic-Bearing-Centrifugal-Chiller-1', location: 'Plantroom'},
-                {name: 'Magnetic-Bearing-Centrifugal-Chiller-2', location: 'Plantroom'},
-                {name: 'Magnetic-Bearing-Centrifugal-Chiller-3', location: 'Plantroom'},
-                {name: 'Screw-Chiller-1', location: 'Plantroom'},
-                {name: 'Screw-Chiller-2', location: 'Plantroom'},
-                {name: 'Screw-Chiller-3', location: 'Plantroom'},
-                {name: 'Cooling-Tower-1', location: 'Plantroom'},
-                {name: 'Cooling-Tower-2', location: 'Plantroom'},
-                {name: 'Cooling-Tower-3', location: 'Plantroom'},
-                {name: 'Cooling-Tower-4', location: 'Plantroom'},
-                {name: 'Cooling-Tower-5', location: 'Plantroom'},
-                {name: 'Cooling-Tower-6', location: 'Plantroom'},
-                {name: 'Primary-Chilled-Water-Pump-1', location: 'Plantroom'},
-                {name: 'Primary-Chilled-Water-Pump-2', location: 'Plantroom'},
-                {name: 'Primary-Chilled-Water-Pump-3', location: 'Plantroom'},
-                {name: 'Primary-Chilled-Water-Pump-4', location: 'Plantroom'},
-                {name: 'Primary-Chilled-Water-Pump-5', location: 'Plantroom'},
-                {name: 'Primary-Chilled-Water-Pump-6', location: 'Plantroom'},
-                {name: 'Primary-Condensate-Water-Pump-1', location: 'Plantroom'},
-                {name: 'Primary-Condensate-Water-Pump-2', location: 'Plantroom'},
-                {name: 'Primary-Condensate-Water-Pump-3', location: 'Plantroom'},
-                {name: 'Primary-Condensate-Water-Pump-4', location: 'Plantroom'},
-                {name: 'Primary-Condensate-Water-Pump-5', location: 'Plantroom'},
-                {name: 'Primary-Condensate-Water-Pump-6', location: 'Plantroom'}
-                //{name: 'Chiller-1', location: 'Blok A'}, 
-                //{name: 'Chiller-2', location: 'Blok A'},
-                //{name: 'Chiller-3', location: 'Blok A'},
-                //{name: 'Cooling Tower-1', location: 'Blok A'}, 
-                //{name: 'Cooling Tower-2', location: 'Blok A'},
-                //{name: 'Cooling Tower-3', location: 'Blok A'},
-                //{name: 'CHWP-1', location: 'Blok A'}, 
-                //{name: 'CHWP-2', location: 'Blok A'},
-                //{name: 'CHWP-3', location: 'Blok A'},
-                //{name: 'CWP-1', location: 'Blok A'},
-                //{name: 'CWP-2', location: 'Blok A'},
-                //{name: 'CWP-3', location: 'Blok A'},
-                //{name: 'Chiller-1', location: 'Blok B'}, 
-                //{name: 'Chiller-2', location: 'Blok B'},
-                //{name: 'Chiller-3', location: 'Blok B'},
-                //{name: 'Cooling Tower-1', location: 'Blok B'}, 
-                //{name: 'Cooling Tower-2', location: 'Blok B'},
-                //{name: 'Cooling Tower-3', location: 'Blok B'},
-                //{name: 'CHWP-1', location: 'Blok B'}, 
-                //{name: 'CHWP-2', location: 'Blok B'},
-                //{name: 'CHWP-3', location: 'Blok B'},
-                //{name: 'CWP-1', location: 'Blok B'},
-                //{name: 'CWP-2', location: 'Blok B'},
-                //{name: 'CWP-3', location: 'Blok B'}
+            'WATER PURIFIER': [
+                {name: 'Water Purifier (Asset No: JHR005/003411)', location: 'Main Building'},
+                {name: 'Water Purifier (Asset No: JHR005/002177)', location: 'Main Building'}
             ],
+          
+            // 'RADIOTHERAPY': [
+            //     {name: 'Radiotherapy (Asset No: HSI41955)', location: 'Main Building'},
+            //     {name: 'Radiotherapy (Asset No: JHR002/003321)', location: 'Main Building'},
+            //     {name: 'Radiotherapy (Asset No: JHR002/003682)', location: 'Main Building'}
+            // ],
             
-            'FIRE PROTECTION SYSTEM': [
-                {name: 'Main Fire Alarm Panel', location: 'Control Room'},
-                {name: 'Hydrant Standby Pump', location: 'Hydrant'},
-            ],
-            
-            'AUTOCLAVE': [
-                {name: 'Freestading Autoclave-1', location: 'Main'}, 
-                {name: 'Freestading Autoclave-2', location: 'Main'},
-                {name: 'Freestading Autoclave-1', location: 'Lab'},
-                {name: 'Freestading Autoclave-2', location: 'Lab'},
-                {name: 'Freestading Autoclave-3', location: 'Lab'},
-            ],
-            
-            'MEDICAL GAS PIPELINE SYSTEM': [
-                {name: 'VIE Tank', location: 'Blok A'},
-                {name: 'Receiver Tank-1', location: 'Blok A'},
-                {name: 'Receiver Tank-2', location: 'Blok A'},
-                {name: 'Air Compressor-1', location: 'Blok A'},
-                {name: 'Air Compressor-2', location: 'Blok A'},
-                {name: 'Vacuum Pump-1', location: 'Blok A'},
-                {name: 'Vacuum Pump-2', location: 'Blok A'},
-                {name: 'Vacuum Pump-3', location: 'Blok A'},
-                {name: 'Air Dryers-1', location: 'Blok A'},
-                {name: 'Air Dryers-2', location: 'Blok A'},
-                {name: 'Air Filtration-1', location: 'Blok A'},
-                {name: 'Air Filtration-2', location: 'Blok A'},
-                {name: 'Cylinder Room', location: 'Blok A'},
-                {name: 'VIE Tank', location: 'Blok B'},
-                {name: 'Cylinder Room', location: 'Blok B'},
-                {name: 'Receiver Tank-1 (MA4 Room)', location: 'Blok B'},
-                {name: 'Receiver Tank-2 (MA4 Room)', location: 'Blok B'},
-                {name: 'Air Compressor-1 (MA4 Room)', location: 'Blok B'},
-                {name: 'Air Compressor-2 (MA4 Room)', location: 'Blok B'},
-                {name: 'Air Compressor-3 (MA4 Room)', location: 'Blok B'},
-                {name: 'Vacuum Pump-1 (Vacuum Room)', location: 'Blok B'},
-                {name: 'Vacuum Pump-2 (Vacuum Room)', location: 'Blok B'},
-                {name: 'AGSS-1', location: 'Blok B'},
-                {name: 'AGSS-2', location: 'Blok B'}
-            ]
+            // 'BRACHYTHERAPY': [
+            //     {name: 'Brachytherapy (Asset No: JHR002/001358)', location: 'Main Building'}
+            // ],
+                     
+            // 'OTHERS': [
+            //     {name: 'Main Fire Alarm Panel', location: 'Control Room'},
+            //     {name: 'Hydrant Tank', location: 'Hydrant'},
+            //     {name: 'Hydrant Duty Pump', location: 'Hydrant'},
+            //     {name: 'Hydrant Standby Pump', location: 'Hydrant'}
+            // ]
         };
 
         const mainMenuPage = document.getElementById('mainMenuPage');
@@ -614,11 +474,3 @@
         </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
